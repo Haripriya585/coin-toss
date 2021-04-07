@@ -14,4 +14,5 @@ public class ProbabilityTest {
 
         assertEquals(actualValue,expectedValue);
     }
+
 }

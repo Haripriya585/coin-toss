@@ -1,5 +1,7 @@
 package tw.probability;
 
+import java.util.Objects;
+
 public class Probability {
     public double probabilityOfHead;
     public double probabilityOfTail;
@@ -12,6 +14,6 @@ public class Probability {
     @Override
     public boolean equals(Object o) {
         Probability cointoss=(Probability) o;
-        return  (this.probabilityOfHead+cointoss.probabilityOfTail==1);
+        return  (this.probabilityOfHead==cointoss.probabilityOfTail) ;
     }
 }
