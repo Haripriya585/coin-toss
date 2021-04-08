@@ -16,4 +16,9 @@ public class Probability {
         Probability cointoss=(Probability) o;
         return  (this.probabilityOfHead==cointoss.probabilityOfTail) ;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(probabilityOfHead, probabilityOfTail);
+    }
 }
