@@ -15,4 +15,14 @@ public class ProbabilityTest {
         assertEquals(actualValue,expectedValue);
     }
 
+    @Test
+    public void testToGetTheProbabilityOfTwoEventsOccuringTogether(){
+        Probability probabilityOfEventOne=new Probability(0.6);
+        Probability probabilityOfEventTwo=new Probability(0.5);
+        double expectedValue=0.3;
+
+        double actualValue=Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);
+
+        assertEquals(actualValue,expectedValue);
+    }
 }
