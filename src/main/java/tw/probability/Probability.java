@@ -16,6 +16,9 @@ public class Probability {
     }
 
     public static double getProbabilityOfTwoEventsOccuringTogether(Probability probabilityOfEventOne, Probability probabilityOfEventTwo) {
+        if (probabilityOfEventOne.probabilityOfEvent>1 || probabilityOfEventTwo.probabilityOfEvent>1 ){
+            throw new IllegalArgumentException("Probabilty cannot be zero or greater than one");
+        }
         return probabilityOfEventOne.probabilityOfEvent*probabilityOfEventTwo.probabilityOfEvent;
     }
 

@@ -2,7 +2,7 @@ package tw.probability;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ProbabilityTest {
     @Test
@@ -24,5 +24,29 @@ public class ProbabilityTest {
         double actualValue=Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);
 
         assertEquals(actualValue,expectedValue);
+    }
+
+    @Test
+    public void testToGetTheProbabilityOfTwoEventsOccuringTogetherWhenProbabilityOfEventOnegreaterThanOne(){
+        Probability probabilityOfEventOne=new Probability(1.5);
+        Probability probabilityOfEventTwo=new Probability(0.5);
+
+        assertThrows(RuntimeException.class, () -> {Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventOne);});
+    }
+
+    @Test
+    public void testToGetTheProbabilityOfTwoEventsOccuringTogetherWhenProbabilityOfEventTwoGreaterThanOne(){
+        Probability probabilityOfEventOne=new Probability(0.5);
+        Probability probabilityOfEventTwo=new Probability(1.5);
+
+        assertThrows(RuntimeException.class, () -> {Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);});
+    }
+
+    @Test
+    public void testToGetTheProbabilityOfTwoEventsOccuringTogetherWhenProbabilityOfBothEventsAreGreaterThanOne(){
+        Probability probabilityOfEventOne=new Probability(1.5);
+        Probability probabilityOfEventTwo=new Probability(1.5);
+
+        assertThrows(RuntimeException.class, () -> {Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);});
     }
 }
