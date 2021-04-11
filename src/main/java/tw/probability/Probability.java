@@ -41,4 +41,9 @@ public class Probability {
     public int hashCode() {
         return Objects.hash(probabilityOfHead, probabilityOfTail);
     }
+
+    public static double getTheProbabilityOfEitherOfTheEventsOccuring(Probability probabilityOfEventOne, Probability probabilityOfEventTwo) {
+        double probabilityEventsOccuringTogether=Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);
+        return probabilityOfEventOne.probabilityOfEvent+probabilityOfEventTwo.probabilityOfEvent-probabilityEventsOccuringTogether;
+    }
 }
