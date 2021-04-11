@@ -49,4 +49,15 @@ public class ProbabilityTest {
 
         assertThrows(RuntimeException.class, () -> {Probability.getProbabilityOfTwoEventsOccuringTogether(probabilityOfEventOne,probabilityOfEventTwo);});
     }
+
+    @Test
+    public void testToGetTheProbabilityOfAnEventNotOccuring(){
+        Probability probabilityOfAnEventToOccur=new Probability(0.2);
+        double expectedValue=0.8;
+
+        double actualValue=Probability.getProbabilityOfAnEventsNotOccuringr(probabilityOfAnEventToOccur);
+
+        assertEquals(actualValue,expectedValue);
+    }
+
 }

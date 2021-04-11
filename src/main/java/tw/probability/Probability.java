@@ -22,6 +22,15 @@ public class Probability {
         return probabilityOfEventOne.probabilityOfEvent*probabilityOfEventTwo.probabilityOfEvent;
     }
 
+    public static double getProbabilityOfAnEventsNotOccuringr(Probability probabilityOfAnEventToOccur) {
+        if(probabilityOfAnEventToOccur.probabilityOfEvent>1){
+            throw new IllegalArgumentException("Probabilty cannot be zero or greater than one");
+        }else{
+            return 1-probabilityOfAnEventToOccur.probabilityOfEvent;
+        }
+    }
+
+
     @Override
     public boolean equals(Object o) {
         Probability cointoss=(Probability) o;
